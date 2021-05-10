@@ -1,0 +1,7 @@
+PUT http://localhost:8000/add
+Content-Type: application/json
+
+{
+    "num1": 5,
+    "num2" : 6
+}
