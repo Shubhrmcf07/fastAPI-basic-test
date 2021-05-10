@@ -11,46 +11,40 @@
       <input type="number" name="num1" id="num1" />
       <input type="number" name="num2" id="num2" />
       <label for=""
-        ><input
-          class="checkbox"
-          type="checkbox"
-          name="check1"
-          id=""
-          value="Hi"
-        />
+        ><input class="radio" type="radio" name="radio1" id="" value="Hi" />
         Hi</label
       >
       <label for=""
         ><input
-          class="checkbox"
-          type="checkbox"
-          name="check1"
+          class="radio"
+          type="radio"
+          name="radio1"
           id=""
           value="Hello"
         />Hello</label
       >
       <label for=""
         ><input
-          class="checkbox"
-          type="checkbox"
-          name="check1"
+          class="radio"
+          type="radio"
+          name="radio1"
           id=""
           value="How"
         />How</label
       >
-      <input type="submit" value="" />
+      <input type="submit" value="Submit" />
     </form>
     <div id="result"></div>
     <script>
       async function myfunc(e) {
-        const arr = document.getElementsByName("check1");
-        const sendArr = [];
-        const len = document.getElementsByName("check1").length;
+        const arr = document.getElementsByName("radio1");
+        const len = document.getElementsByName("radio1").length;
         console.log(len);
 
+        var selectedRadio;
         for (var i = 0; i < len; i++) {
           if (arr[i].checked) {
-            sendArr.push(arr[i].value);
+            selectedRadio = arr[i].value;
           }
         }
         console.log(arr);
@@ -60,7 +54,7 @@
           body: JSON.stringify({
             num1: document.getElementById("num1").value,
             num2: document.getElementById("num2").value,
-            arr: sendArr,
+            radioValue: selectedRadio,
           }),
           headers: {
             Accept: "application/json",

@@ -19,5 +19,6 @@ def root_check():
 async def add_numbers(request : Request):
     body = await request.body()
     body = json.loads(body)
+    print(body)
     sum = int(body["num1"]) + int(body["num2"])
-    return {"sum" : sum, "arr" : body["arr"]}
+    return {"sum" : sum, "value_selected": body["radioValue"]}
