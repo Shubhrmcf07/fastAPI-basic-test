@@ -20,4 +20,4 @@ async def add_numbers(request : Request):
     body = await request.body()
     body = json.loads(body)
     sum = int(body["num1"]) + int(body["num2"])
-    return {"sum" : sum}
+    return {"sum" : sum, "arr" : body["arr"]}
