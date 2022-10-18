@@ -15,7 +15,7 @@ app.add_middleware(
 @app.get("/")
 def root_check():
     return {
-        "Message" : "API working successfully!"
+        "Message" : "API Working Successfully!"
     }
 
 #POST Resource
@@ -23,6 +23,6 @@ def root_check():
 async def add_numbers(request : Request):
     body = await request.body()
     body = json.loads(body)
-    print(body)
+    print("The body is: " + body)
     sum = int(body["num1"]) + int(body["num2"])
     return {"sum" : sum, "value_selected": body["radioValue"]}
